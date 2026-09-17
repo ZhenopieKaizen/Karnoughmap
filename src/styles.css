@@ -109,17 +109,17 @@ nav {
   align-items: center;
 }
 .theme-toggle {
-  width: 156px;
-  height: 48px;
-  padding: 3px;
+  width: 90px;
+  height: 28px;
+  padding: 2px;
   border: 1px solid #cfd2d0;
   border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4px;
+  gap: 2px;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 7px;
   font-weight: 700;
   letter-spacing: 0.04em;
   transition:
@@ -136,13 +136,13 @@ nav {
 }
 .theme-toggle.is-light {
   flex-direction: row;
-  padding-left: 17px;
+  padding-left: 7px;
   color: #111;
   background: #e5e7e6;
 }
 .theme-toggle.is-dark {
   flex-direction: row-reverse;
-  padding-right: 13px;
+  padding-right: 6px;
   color: #fff;
   background: #050505;
   border-color: #050505;
@@ -152,9 +152,9 @@ nav {
   white-space: nowrap;
 }
 .theme-toggle__knob {
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
   display: grid;
   place-items: center;
   color: #090909;
@@ -164,8 +164,8 @@ nav {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
 }
 .theme-toggle__knob svg {
-  width: 28px;
-  height: 28px;
+  width: 16px;
+  height: 16px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -820,14 +820,14 @@ html[data-theme="dark"] .feedback {
     display: flex;
   }
   .theme-toggle {
-    width: 138px;
-    height: 44px;
-    font-size: 11px;
+    width: 86px;
+    height: 28px;
+    font-size: 7px;
   }
   .theme-toggle__knob {
-    width: 36px;
-    height: 36px;
-    flex-basis: 36px;
+    width: 22px;
+    height: 22px;
+    flex-basis: 22px;
   }
   .lesson {
     grid-template-columns: 1fr;
@@ -1377,12 +1377,12 @@ svg {
 
 @media (max-width: 370px) {
   .theme-toggle {
-    width: 44px;
-    padding: 3px;
+    width: 28px;
+    padding: 2px;
   }
   .theme-toggle.is-light,
   .theme-toggle.is-dark {
-    padding: 3px;
+    padding: 2px;
   }
   .theme-toggle__label {
     position: absolute;
