@@ -83,11 +83,29 @@ export default function App() {
             Beginner
           </label>
           <button
-            className="icon"
+            className={`theme-toggle ${dark ? "is-dark" : "is-light"}`}
             onClick={() => setDark(!dark)}
-            aria-label="Toggle theme"
+            role="switch"
+            aria-checked={dark}
+            aria-label={`Switch to ${dark ? "day" : "night"} mode`}
+            title={`Switch to ${dark ? "day" : "night"} mode`}
           >
-            {dark ? "☀" : "☾"}
+            <span className="theme-toggle__label">
+              {dark ? "NIGHT MODE" : "DAY MODE"}
+            </span>
+            <span className="theme-toggle__knob" aria-hidden="true">
+              {dark ? (
+                <svg viewBox="0 0 48 48">
+                  <path d="M29 7a17 17 0 1 0 12 27A15 15 0 0 1 29 7Z" />
+                  <path d="m35 8 1.3 3.2L40 12.5l-3.7 1.3L35 17l-1.3-3.2-3.7-1.3 3.7-1.3L35 8Zm7 11 .8 2 2.2.8-2.2.8-.8 2-.8-2-2.2-.8 2.2-.8.8-2Z" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 48 48">
+                  <circle cx="24" cy="24" r="9" />
+                  <path d="M24 4v7M24 37v7M4 24h7M37 24h7M10 10l5 5M33 33l5 5M38 10l-5 5M15 33l-5 5" />
+                </svg>
+              )}
+            </span>
           </button>
         </div>
       </header>

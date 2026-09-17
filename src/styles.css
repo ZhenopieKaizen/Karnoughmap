@@ -108,8 +108,73 @@ nav {
   gap: 6px;
   align-items: center;
 }
-.icon {
-  padding: 7px 10px;
+.theme-toggle {
+  width: 156px;
+  height: 48px;
+  padding: 3px;
+  border: 1px solid #cfd2d0;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+.theme-toggle:hover {
+  border-color: var(--green);
+}
+.theme-toggle:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--green) 45%, transparent);
+  outline-offset: 2px;
+}
+.theme-toggle.is-light {
+  flex-direction: row;
+  padding-left: 17px;
+  color: #111;
+  background: #e5e7e6;
+}
+.theme-toggle.is-dark {
+  flex-direction: row-reverse;
+  padding-right: 13px;
+  color: #fff;
+  background: #050505;
+  border-color: #050505;
+}
+.theme-toggle__label {
+  line-height: 1;
+  white-space: nowrap;
+}
+.theme-toggle__knob {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: grid;
+  place-items: center;
+  color: #090909;
+  background: #fff;
+  border: 1px solid #b8bcba;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+}
+.theme-toggle__knob svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.theme-toggle.is-dark .theme-toggle__knob svg path:last-child {
+  fill: currentColor;
+  stroke: none;
 }
 main {
   max-width: 1180px;
@@ -752,7 +817,17 @@ html[data-theme="dark"] .feedback {
     grid-template-columns: 1fr;
   }
   .settings {
-    display: none;
+    display: flex;
+  }
+  .theme-toggle {
+    width: 138px;
+    height: 44px;
+    font-size: 11px;
+  }
+  .theme-toggle__knob {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
   }
   .lesson {
     grid-template-columns: 1fr;
@@ -1297,5 +1372,23 @@ svg {
   .expression-input-row {
     grid-template-columns: 1fr;
     gap: 5px;
+  }
+}
+
+@media (max-width: 370px) {
+  .theme-toggle {
+    width: 44px;
+    padding: 3px;
+  }
+  .theme-toggle.is-light,
+  .theme-toggle.is-dark {
+    padding: 3px;
+  }
+  .theme-toggle__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
   }
 }
